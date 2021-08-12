@@ -1,0 +1,7 @@
+.infoBox {
+  border-width: 5px;
+  border-color: red;
+}
+.infoBox__total {
+  font-size: 50px;
+}
