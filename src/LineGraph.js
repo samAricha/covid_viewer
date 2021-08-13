@@ -22,7 +22,7 @@ const options = {
     },
   },
   scales: {
-    xAxes: [
+    x: [
       {
         type: "time",
         time: {
@@ -31,7 +31,7 @@ const options = {
         },
       },
     ],
-    yAxes: [
+    y: [
       {
         gridLines: {
           display: false,
@@ -63,7 +63,7 @@ const buildChartData = (data, caseType) => {
   return chartData;
 };
 
-function LineGraph({ caseType }) {
+function LineGraph({ caseType, ...props }) {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -82,7 +82,7 @@ function LineGraph({ caseType }) {
   }, [caseType]);
 
   return (
-    <div>
+    <div className={props.className}>
       {data?.length > 0 && (
         <Line
           options={options}
